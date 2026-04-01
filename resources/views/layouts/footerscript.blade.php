@@ -12,3 +12,8 @@
     <!--! BEGIN: Theme Customizer  !-->
     <script src="assets/js/theme-customizer-init.min.js"></script>
     <!--! END: Theme Customizer !-->
+    <script src="assets/vendors/js/dataTables.min.js"></script>
+    {{-- <script src="assets/vendors/js/dataTables.bs5.min.js"></script> --}}
+    <script src="assets/vendors/js/select2.min.js"></script>
+    <script src="assets/vendors/js/select2-active.min.js"></script>
+      <script src="assets/js/leads-view-init.min.js"></script>
