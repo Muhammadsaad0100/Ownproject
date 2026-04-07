@@ -1,9 +1,5 @@
  @extends('layouts.app')
  @section('content')
-     <!DOCTYPE html>
-     <html lang="en">
-
-     <body>
          <div class="nxl-container">
              <div class="nxl-content">
                  <!-- Page Header - exactly from first design -->
@@ -20,8 +16,6 @@
                      <div class="page-header-right ms-auto">
                          <div class="page-header-right-items">
                              <div class="d-flex align-items-center gap-2">
-
-
                                  <!-- Create button - matches 2nd code functionality -->
                                  <a href="{{ route('users.create') }}" class="btn btn-primary" id="createEmployeeBtn">
                                      <i class="fas fa-plus me-2"></i>
@@ -57,6 +51,7 @@
                                  </thead>
                                  <tbody>
                                      @foreach ($users as $user)
+                                    
                                          <tr class="single-item" data-user-id="{{ $user->id }}">
                                              <td>
                                                  <div class="item-checkbox ms-1">
@@ -68,9 +63,9 @@
                                              </td>
                                              <td>
                                                  <div class="employee-card">
-                                                     <img src="{{ $user->avatar ? asset('storage/' . $user->avatar) : asset('images/logo.png') }}"
+                                                     {{-- <img src="{{ $user->avatar ? asset('storage/' . $user->avatar) : asset('images/logo.png') }}"
                                                          alt="Avatar" class="employee-avatar"
-                                                         onerror="this.src='https://via.placeholder.com/40?text=User'">
+                                                         onerror="this.src='https://via.placeholder.com/40?text=User'"> --}}
                                                      <div class="employee-details">
                                                          <span class="employee-name">{{ ucfirst($user->name) }}</span>
                                                      </div>
@@ -93,6 +88,7 @@
                                                          class="btn btn-sm btn-warning action-btn" title="Edit">
                                                          <i class="fas fa-pencil-alt"></i>
                                                      </a>
+                                                     
                                                      <form action="{{ route('users.destroy', $user->id) }}" method="POST"
                                                          class="d-inline delete-form"
                                                          onsubmit="return confirm('Are you sure you want to delete this employee?')">
@@ -103,6 +99,10 @@
                                                              <i class="fas fa-trash-alt"></i>
                                                          </button>
                                                      </form>
+                                                     <a href="{{ route('users.show', $user->id) }}"
+   class="btn btn-sm btn-info action-btn" title="View">
+   <i class="fas fa-eye"></i>
+</a>
 
                                                  </div>
                                              </td>
@@ -121,7 +121,7 @@
          <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
          <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
          <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-         <script>
+         {{-- <script>
              $(document).ready(function() {
                  // Initialize DataTable - same as 2nd code
                  var dataTable = $('#employeeTable').DataTable({
@@ -331,10 +331,10 @@
              });
                 <script src="assets/vendors/js/dataTables.min.js"></script>
     <script src="assets/vendors/js/dataTables.bs5.min.js"></script>
-         </script>
-     </body>
+         </script> --}}
+ 
 
-     </html>
+     
  @endsection
 
 

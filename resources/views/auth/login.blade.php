@@ -57,9 +57,15 @@
                         <div class="mb-4">
                             <input type="email" name="email" class="form-control" placeholder="Email" required>
                         </div>
-                        <div class="mb-3">
-                            <input type="password"  name="password" class="form-control" placeholder="Password" required>
-                        </div>
+                       <div class="mb-3 position-relative">
+    <input type="password" id="password" name="password" 
+           class="form-control pe-5" placeholder="Password" required>
+
+    <span onclick="togglePassword()" 
+          style="position:absolute; top:50%; right:15px; transform:translateY(-50%); cursor:pointer;">
+        <i id="eyeIcon" class="fas fa-eye"></i>
+    </span>
+</div>
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
                                 <div class="custom-control custom-checkbox">
@@ -102,3 +108,19 @@
 </body>
 
 </html>
+<script>
+function togglePassword() {
+    let password = document.getElementById("password");
+    let icon = document.getElementById("eyeIcon");
+
+    if (password.type === "password") {
+        password.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        password.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}
+</script>

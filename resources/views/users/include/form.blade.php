@@ -1,6 +1,5 @@
 
-@extends('layouts.app')
-@section('content')<div class="row">
+<div class="row">
 
     {{-- Name --}}
     <div class="col-md-6 mb-3">
@@ -18,19 +17,7 @@
                class="form-control" required>
     </div>
 
-    {{-- Password (only for create or optional update) --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" name="password"
-               class="form-control">
-    </div>
-
-    {{-- Confirm Password --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">Confirm Password</label>
-        <input type="password" name="password_confirmation"
-               class="form-control">
-    </div>
+  
 
     {{-- Date of Joining --}}
     <div class="col-md-6 mb-3">
@@ -48,22 +35,5 @@
             <option value="0" {{ old('status', $user->status ?? 1) == 0 ? 'selected' : '' }}>Inactive</option>
         </select>
     </div>
-
-    {{-- Avatar Upload --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">Profile Image</label>
-        <input type="file" name="avatar" class="form-control">
-    </div>
-
-    {{-- Preview (only in edit) --}}
-    @if(!empty($user->avatar))
-    <div class="col-md-6 mb-3">
-        <label class="form-label d-block">Current Image</label>
-        <img src="{{ asset('storage/' . $user->avatar) }}" 
-             width="60" height="60" 
-             class="rounded border">
-    </div>
-    @endif
-
 </div>
-@endsection
+

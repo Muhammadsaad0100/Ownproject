@@ -11,11 +11,11 @@
                 <p class="text-subtitle text-muted">{{ __('Detail user information.') }}</p>
             </div>
 
-            <x-breadcrumb>
+            {{-- <x-breadcrumb>
                 <li class="breadcrumb-item"><a href="/">{{ __('Dashboard') }}</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('users.index') }}">{{ __('User') }}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ __('Detail') }}</li>
-            </x-breadcrumb>
+            </x-breadcrumb> --}}
         </div>
     </div>
 
